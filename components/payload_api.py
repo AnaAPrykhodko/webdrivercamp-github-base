@@ -12,7 +12,7 @@ class PayloadAPI():
 
 
     def add(self, value):
-        self.json_data = json.dumps(value)
+        self.json_data = value
 
     def replace(self, value):
         pass
@@ -20,8 +20,8 @@ class PayloadAPI():
 
     def to_file(self, filename):
         with open(filename, 'w') as writer:
-            writer.write(self.json_data)
+            writer.write(json.dumps(self.json_data))
 
 
     def to_json(self):
-        return self.json_data
+        return json.dumps(self.json_data)

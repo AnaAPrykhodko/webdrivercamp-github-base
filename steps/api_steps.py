@@ -5,11 +5,11 @@
 # A step that would verify the response value
 from behave import step
 
-from common import TOKEN
-from components.payload_api import PayloadAPI
+from base.components.payload_api import PayloadAPI
+from base.common import TOKEN
 
 
-@step('Making {GET} request to {url} with auth token')
+@step('Making {method} request to {url} with auth token')
 @step('Making {method} request to {url} with {filename} with auth token')
 def step_impl(context, method, url, filename=None):
     if method == 'GET':
